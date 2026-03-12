@@ -23,7 +23,7 @@ public class SqliteDb1 : MonoBehaviour
                 string sqlQuery = "CREATE TABLE IF NOT EXISTS Effects (EFFId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, description TEXT)";
                 string sqlQuery2 = "CREATE TABLE IF NOT EXISTS Armour (ArmourId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, description TEXT, rarity TEXT, price DECIMAL(5, 2))";
                 string sqlQuery3 = "CREATE TABLE IF NOT EXISTS Charakter (ChaId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE,experience INTEGER , money DECIMAL(6,2), level INTEGER)";
-                string sqlQuery4 = "CREATE TABLE IF NOT EXISTS Item ( ItemId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, rarity TEXT, price DECIMAL(5,2)";
+                string sqlQuery4 = "CREATE TABLE IF NOT EXISTS Item ( ItemId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE,description TEXT, rarity TEXT, price DECIMAL(5,2)";
                 command.CommandText = sqlQuery;
                 command.ExecuteNonQuery();
             }
@@ -55,16 +55,17 @@ public class SqliteDb1 : MonoBehaviour
     }
 
 
-    public void AddArmour(string armourName, string armourDescription, string rarity, decimal price)
+    public void AddArmour(string armourName, string armourDescription, string armourRarity, decimal armourPrice)
     {
         using (var connection = new SqliteConnection(dbName))
         {
             connection.Open();
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "INSERT OR IGNORE INTO Armour (name, description, rarity, price) VALUES ('" + armourName + "', '" + armourDescription + "', '" + rarity + "', " + price + ");";
+                command.CommandText = "INSERT OR IGNORE INTO Armour (name, description, rarity, price) VALUES ('" + armourName + "', '" + armourDescription + "', '" + armourRarity + "', " + armourPrice + ");";
                 command.ExecuteNonQuery();
             }
+            connection.Close();
         }
     }
 
@@ -78,8 +79,28 @@ public class SqliteDb1 : MonoBehaviour
                 command.CommandText = "INSERT OR IGNORE INTO Charakter (name, experience, money, level) VALUES ('" + charakterName + "', " + experience + ", " + money + ", " + level + ");";
                 command.ExecuteNonQuery();
             }
+            connection.Close();
         }
     }
+
+
+
+    public void AddItem(string itemName,string itemDescription, string itemRarity, decimal itemPrice)
+    {
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "INSERT OR IGNORE INTO Item(name, description, rarity, price) VALUES('" + itemName + "', '" + itemDescription + "', '" + itemRarity + "', " + itemPrice + "); ";
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
+    }
+
+
+    
 
     public  void DisplayEffects()
         {
