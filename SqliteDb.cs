@@ -68,6 +68,18 @@ public class SqliteDb1 : MonoBehaviour
         }
     }
 
+    public void AddCharakter(string charakterName, int experience, decimal money, int level)
+    {
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "INSERT OR IGNORE INTO Charakter (name, experience, money, level) VALUES ('" + charakterName + "', " + experience + ", " + money + ", " + level + ");";
+                command.ExecuteNonQuery();
+            }
+        }
+    }
 
     public  void DisplayEffects()
         {
