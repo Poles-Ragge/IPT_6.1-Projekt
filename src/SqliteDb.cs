@@ -10,6 +10,15 @@ public class SqliteDb1 : MonoBehaviour
     {
         CreateDB();
         AddEffect("Effect1", "Description of Effect1");
+       
+        AddArmour("Armour1", "Description of Armour1", "rare", 10.2m);
+
+        
+        AddCharakter("Held1", 0, 100.0m, 1);
+
+      
+        AddItem("HealPotion", "Heals 50 HP", "common", 5.0m);
+
         DisplayEffects();
     }
 
@@ -20,11 +29,18 @@ public class SqliteDb1 : MonoBehaviour
             connection.Open();
             using (var command = connection.CreateCommand())
             {
-                string sqlQuery = "CREATE TABLE IF NOT EXISTS Effects (EFFId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, description TEXT)";
-                string sqlQuery2 = "CREATE TABLE IF NOT EXISTS Armour (ArmourId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, description TEXT, rarity TEXT, price DECIMAL(5, 2))";
-                string sqlQuery3 = "CREATE TABLE IF NOT EXISTS Charakter (ChaId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE,experience INTEGER , money DECIMAL(6,2), level INTEGER)";
-                string sqlQuery4 = "CREATE TABLE IF NOT EXISTS Item ( ItemId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE,description TEXT, rarity TEXT, price DECIMAL(5,2)";
-                command.CommandText = sqlQuery;
+               
+                command.CommandText = "CREATE TABLE IF NOT EXISTS Effects (EFFId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, description TEXT)";
+                command.ExecuteNonQuery();
+
+                command.CommandText = "CREATE TABLE IF NOT EXISTS Armour (ArmourId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, description TEXT, rarity TEXT, price DECIMAL(5, 2))";
+                command.ExecuteNonQuery();
+
+                command.CommandText = "CREATE TABLE IF NOT EXISTS Charakter (ChaId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, experience INTEGER, money DECIMAL(6, 2), level INTEGER)";
+                command.ExecuteNonQuery();
+
+               
+                command.CommandText = "CREATE TABLE IF NOT EXISTS Item (ItemId INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, description TEXT, rarity TEXT, price DECIMAL(5, 2))";
                 command.ExecuteNonQuery();
             }
         }
@@ -120,6 +136,8 @@ public class SqliteDb1 : MonoBehaviour
                 }
             }
         }
+
+    
 
     
 
