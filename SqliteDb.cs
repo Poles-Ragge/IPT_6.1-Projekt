@@ -20,7 +20,7 @@ public class SqliteDb1 : MonoBehaviour
             connection.Open();
             using (var command = connection.CreateCommand())
             {
-                string sqlQuery = "CREATE TABLE IF NOT EXISTS Effects (Id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT)";
+                string sqlQuery = "CREATE TABLE IF NOT EXISTS Effects (Id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE, description TEXT)";
                 command.CommandText = sqlQuery;
                 command.ExecuteNonQuery();
             }
@@ -37,7 +37,8 @@ public class SqliteDb1 : MonoBehaviour
 
             {
 
-                command.CommandText = "INSERT INTO effects (name, description) VALUES ('" + effectName + "', '" + effectDescription + "');";
+                command.CommandText = "INSERT OR IGNORE INTO effects (name, description) VALUES ('" + effectName + "', '" + effectDescription + "');";
+
                 command.ExecuteNonQuery();
             }
 
@@ -50,30 +51,30 @@ public class SqliteDb1 : MonoBehaviour
         }
     }
 
-    public void DisplayEffects()
-    {
-        using (var connection = new SqliteConnection(dbName))
+      public  void DisplayEffects()
         {
-            connection.Open();
-            using (var command = connection.CreateCommand())
+            using (var connection = new SqliteConnection(dbName))
             {
-                command.CommandText = "SELECT * FROM Effects;";
-                using (IDataReader reader = command.ExecuteReader())
+                connection.Open();
+                using (var command = connection.CreateCommand())
                 {
-                    while (reader.Read())
+                    command.CommandText = "SELECT * FROM Effects;";
+                    using (IDataReader reader = command.ExecuteReader())
                     {
-                        Debug.Log("Name: " + reader["name"] + "\tDescription: " + reader["description"]);
+                        while (reader.Read())
+                        {
+                            Debug.Log("Name: " + reader["name"] + "\tDescription: " + reader["description"]);
+                        }
                     }
                 }
             }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
+        }
     }
-}
 
 
 
