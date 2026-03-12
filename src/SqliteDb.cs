@@ -138,14 +138,74 @@ public class SqliteDb1 : MonoBehaviour
         }
 
     
+    public void DisplayArmour()
+    {
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Armour;";
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Debug.Log("Name: " + reader["name"] + "\tDescription: " + reader["description"] + "\tRarity: " + reader["rarity"] + "\tPrice: " + reader["price"]);
+                    }
+                }
+            }
+        }
+    }           
 
-    
+    public void DisplayCharakter()
+    {
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Charakter;";
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Debug.Log("Name: " + reader["name"] + "\tExperience: " + reader["experience"] + "\tMoney: " + reader["money"] + "\tLevel: " + reader["level"]);
+                    }
+                }
+            }
+        }
+    }
 
-  
+    public void DisplayItem()
+    {
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Item;";
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Debug.Log("Name: " + reader["name"] + "\tDescription: " + reader["description"] + "\tRarity: " + reader["rarity"] + "\tPrice: " + reader["price"]);
+                    }
+                }
+            }
+        }
+    }
 
-   
 
-   
+
+
+
+
+
+
+
+
+
+
 
     // Update is called once per frame
     void Update()
