@@ -1,0 +1,7 @@
+LV:
+
+- Animationen Gegner
+- Sprites Main Character
+- 3 Code Files (Game/Character Logic)
+- Shop design
+- Tilemaps
