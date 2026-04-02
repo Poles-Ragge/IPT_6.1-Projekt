@@ -14,8 +14,15 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private Animator animator;
+
+    private bool loop = true;
 
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Awake()
     {
@@ -37,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-
+        setAnimation();
 
     }
 
@@ -48,6 +55,19 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+
+    private void setAnimation()
+    {
+        if (loop == true)
+        {
+            animator.Play("Player_Animation");
+
+        }
+        else 
+        {
+            
+        }
+    }
 
 
 
