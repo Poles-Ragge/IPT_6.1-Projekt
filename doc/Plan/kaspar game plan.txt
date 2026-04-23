@@ -1,0 +1,11 @@
+- Game
+- Mit Levels S
+- Speicherung verschiedener Variabeln:
+* Leben HP
+* In-Game Währung
+* Ausrüstung (Rüstungsstand - höhere Rüstung desto besser)
+* XP
+* Login 
+
+* Panel STORY (wie Angry birds ding bum bala bad)
+

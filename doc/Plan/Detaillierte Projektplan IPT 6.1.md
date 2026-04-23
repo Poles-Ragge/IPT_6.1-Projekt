@@ -76,7 +76,7 @@ Das Projekt befindet sich auf das Github von Luka Vucer, wo beide Teammitglieder
 
 |---------------|-------------------------------------------|---------------|----------------------|
 
-| 05.02.2026    | Planung                                   | L.V \& K.H     | Planugnslektion      |
+| 05.02.2026    | Planung                                   | L.V \& K.H    | Planugnslektion      |
 
 | bis 22.2.2026 | ERM + ERD + Prog-Ablaufplan + UML-Klass.D | L.V           | ü. Ferien            |
 
@@ -114,7 +114,7 @@ Das Projekt befindet sich auf das Github von Luka Vucer, wo beide Teammitglieder
 
 | 16.04.2026    | Game - Mechanics                          | K.H           | von Leveln           |
 
-| 23.04.2026    | Game - Mechanics                          | L.V           | Phisik, etc.         |
+| 23.04.2026    | Game - Mechanics                          | L.V           | Phisik, etc.         | //Notiz: Verbindungsprobleme w/ Unity
 
 | 23.04.2026    | Game - Mechanics                          | K.H           |                      |
 

@@ -5,3 +5,5 @@ LV:
 - 3 Code Files (Game/Character Logic)
 - Shop design
 - Tilemaps
+- end slides
+- 
