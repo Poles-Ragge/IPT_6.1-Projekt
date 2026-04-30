@@ -1,21 +1,21 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     public int health = 100;
+    public int coins;
 
     public float speed = 5;
     public float jump = 5;
-
-    public int i = 25; //Debugging
-    public int damage_maker = 20; //Für Unittest  
 
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
     private bool isGrounded;
+
 
 
     private Rigidbody2D rb;
@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
     private bool loop = true;
 
     private SpriteRenderer spriteRenderer;
+
+    public Image healthImage;
+
+   
 
     private void Start()
     {
@@ -53,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         setAnimation();
+         healthImage.fillAmount = health / 100f;
 
     }
 
@@ -91,8 +96,7 @@ public class PlayerMovement : MonoBehaviour
             if (health <= 0)
             {
 
-                Die(); //Kopoie an Enemy
-                
+                Die();
 
               
                 
@@ -111,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
     private void Die()
 {
     UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
-    Debug.Log("Player is dead!"); // Vorschlag fuer Zukunft: Die soll auch checken ob Player tot ist (ist beim Enemy so)
+    Debug.Log("Player is dead!");
 }
 
 }
