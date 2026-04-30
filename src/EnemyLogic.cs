@@ -13,6 +13,14 @@ namespace Enemy_logic
     {
         static void Main(string[] args)
         {
+            // AN KHALIL: Kommentare "//" LÖSCHEN
+            // Variabeln anpassen!!!
+
+            // Die() === Die-check - Checkt ob der Enemy bereit zum sterben ist
+
+
+            bool ts = false; // Fuer Unittest - NICHT ANFASSEN!!!
+            int speed = 5;
 
             int hp = 100; // Standartwert Schaden
             int schaden = Convert.ToInt32(Console.ReadLine());
@@ -48,6 +56,14 @@ namespace Enemy_logic
             damage();
             Console.ReadKey();
             damage();
+
+            Private void Die()
+            {
+                if (hp == 0) {
+                    Console.Log("Enemy is dead!")
+                }
+                
+            }
 
 
 
