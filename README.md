@@ -16,3 +16,5 @@ Das Spiel beeinhaltet eine Datenbank, die jeweilige Informationen und den Spiels
 Der Artstyle ist relativ simple gehalten. <br>
 Das Spiel wurde mithilfe von Unity entwickelt. Jeder Art von Code wurde selbst erschaffen. <br>
 Die jeweiligen Grafiken wurden alle selbst erschaffen <br>
+
+<br> NOTIZ!: COINS AUSSERHALB DEM SPIELERBEREICH SPEICHERN
