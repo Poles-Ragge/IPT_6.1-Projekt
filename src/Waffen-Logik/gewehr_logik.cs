@@ -17,8 +17,14 @@ namespace gewehr_logik
              * using System.Threading; hinzufuegen damit man Thread.Sleep(); bekommt. Damit kann man einen Delay machen
              * */
 
-            bool equipt = true;
-            int ammo = 120;
+        public GameObject Bullet;
+        public Transform firePoint;
+        public float bulletSpeed = 10;     //Geschwindigkeit vom Bullet
+        public float shootInterval = 2;    //Interval = zwischen welchen zeitabständen ein Bullet geschossen wird
+        public float fireRadius = 0.5;     //Radius um den Gegner herum wo der bullet spawned (wenn der enemy sich bewegt, damit er sich nicht so selbst erschiestst
+
+        bool equipt = true;
+        int ammo = 120;
 
 
 
@@ -35,7 +41,7 @@ namespace gewehr_logik
 
 
                 ammo--;
-                Console.WriteLine(Convert.ToString(ammo));
+                Console.WriteLine(Convert.ToString(ammo)); //Durch Console.Log ersetzen!! (ABER NUR FUER TESTING!!) nach Testing rausnehmen. Ansonsten unnoetiger Prozess
 
             }
 
