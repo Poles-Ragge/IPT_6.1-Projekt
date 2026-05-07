@@ -6,6 +6,9 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 
 namespace Enemy_logic
 {
@@ -28,13 +31,13 @@ namespace Enemy_logic
             void damage()
             {
                 hp -= schaden;
-                Console.Write(hp);
+                Console.Write(hp); //Ersetze mit Debug.log wenn gebraucht
 
                 if (hp == 0)
                 {
                     //Die();
                     // Debug.Log("Enemy DEAD");
-                    Console.WriteLine("Enemy Dead");
+                    Console.WriteLine("Enemy Dead"); //Entfernen
 
                 }
 
@@ -60,7 +63,7 @@ namespace Enemy_logic
             Private void Die()
             {
                 if (hp == 0) {
-                    Console.Log("Enemy is dead!")
+                    Console.Log("Enemy is dead!") 
                 }
                 
             }
