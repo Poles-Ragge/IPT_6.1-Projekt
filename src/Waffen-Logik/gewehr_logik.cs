@@ -19,8 +19,7 @@ namespace gewehr_logik
 
         public GameObject Bullet;
         public Transform firePoint;
-        public float bulletSpeed = 10;     //Geschwindigkeit vom Bullet
-        public float shootInterval = 2;    //Interval = zwischen welchen zeitabständen ein Bullet geschossen wird
+        public float shootInterval = 1;    //Interval = zwischen welchen zeitabständen ein Bullet geschossen wird
         public float fireRadius = 0.5;     //Radius um den Gegner herum wo der bullet spawned (wenn der enemy sich bewegt, damit er sich nicht so selbst erschiestst
 
         bool equipt = true;
@@ -32,7 +31,9 @@ namespace gewehr_logik
             {
                 Thread.Sleep(650);
 
-                if (ammo == 60)
+                
+
+                if (ammo == 90 || 60 || 30 ) //Magazin = 30 Bullets
                 {
                     Console.WriteLine("Reloading..."); //Durch Console.Log ersetzen!!
                     Thread.Sleep(4500);
@@ -41,6 +42,11 @@ namespace gewehr_logik
 
 
                 ammo--;
+                
+                if (ammo == 0){
+                break;
+                }
+
                 Console.WriteLine(Convert.ToString(ammo)); //Durch Console.Log ersetzen!! (ABER NUR FUER TESTING!!) nach Testing rausnehmen. Ansonsten unnoetiger Prozess
 
             }
