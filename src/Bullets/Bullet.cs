@@ -6,6 +6,11 @@ public class Bullet : MonoBehaviour
     public float bulletDamage = 10f;
     public Rigidbody2D rb;
 
+
+    /// <summary>
+    /// BASIC BULLET. BEI WAFFEN DIE JEWEILIGEN BULLETS BENUTZEN UM UNTERSCHIEDLICHEN SCHADEN ZU ERSTELLEN.!!!
+    /// </summary>
+
     private void Start()
     {
         // Bullet wird automatisch vernichtet wenn laenger als X (in diesem fall 5, aendern bitte)
