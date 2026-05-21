@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class GW_Bullet : MonoBehaviour
 {
-    public float bulletSpeed = 15f;
-    public float bulletDamage = 15f;
+    public float bulletSpeed = 20f;
+    public float bulletDamage = 10f;
     public Rigidbody2D rb;
 
 
     /// <summary>
-    /// GEWEHR BULLET: BASIC BULLET
+    /// AK BULLET: MEHR  BULLETS ABER WENIG SCHADEN
     /// </summary>
 
     private void Start()
