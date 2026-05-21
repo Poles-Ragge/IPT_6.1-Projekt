@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +16,15 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
+    public AudioClip jumpClip;
+
+    public AudioClip damageClip;
+
+    public AudioClip coinClip;
+
+
+
+
     private bool isGrounded;
 
 
@@ -26,14 +37,22 @@ public class PlayerMovement : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    private AudioSource audioSource;
+
     public Image healthImage;
 
+    public TextMeshProUGUI coinText;
+
+
+
    
+
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Awake()
@@ -51,13 +70,19 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump);
-
+            PlaySound(jumpClip);
 
 
         }
 
         setAnimation();
          healthImage.fillAmount = health / 100f;
+
+        if (coinText != null)
+        {
+            coinText.text = coins.ToString();
+           
+        }
 
     }
 
@@ -86,8 +111,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Damage"))
         {
-           
-                StartCoroutine(blinkRed());
+           PlaySound(damageClip);
+            StartCoroutine(blinkRed());
             health -= 10;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump);
             Debug.Log("Player Health: " + health);
@@ -118,7 +143,20 @@ public class PlayerMovement : MonoBehaviour
     Debug.Log("Player is dead!");
 }
 
+
+
+
+    private void PlaySound(AudioClip audioClip)
+    {
+
+        audioSource.clip = audioClip;
+        audioSource.Play();
+
+    }
+
+
 }
+
 
 
 
