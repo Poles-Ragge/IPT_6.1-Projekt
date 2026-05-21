@@ -134,7 +134,7 @@ Das Projekt befindet sich auf das Github von Luka Vucer, wo beide Teammitglieder
 
 | 21.05.2026    | Game - Testing                            | K.H           | Fehler finden        |
 
-| 28.05.2026    | Datenbank verknüpfen                      | L.V           |                      |
+| 28.05.2026    | Datenbank verknüpfen                      | L.V           | Bis 28.5: BG und TiSc| //Notiz: Schon Verknüft jedoch provisorisch. Änderungen möglich.
 
 | 28.05.2026    | Game - Polishing                          | K.H           |                      |
 
@@ -150,6 +150,8 @@ Das Projekt befindet sich auf das Github von Luka Vucer, wo beide Teammitglieder
 
 | 12.06.2026    | Letzte Überprüfungen \& abgabe             | K.H           | Abgabe LV Github     |
 
+BG = Background
+TiSc = Titlescreen
 
 
 ***Geplantes Zeitaufwand: 15 Doppellektionen (17 mit der 5.2.26 Planungslektion \& vorherige Lektion) + Heimarbeit von 10 Lektionen***

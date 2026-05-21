@@ -23,20 +23,20 @@ namespace gewehr_logik
         public float fireRadius = 0.5;     //Radius um den Gegner herum wo der bullet spawned (wenn der enemy sich bewegt, damit er sich nicht so selbst erschiestst
 
         bool equipt = true;
-        int ammo = 120;
+        int ammo = 250;
 
 
 
             while (equipt == false)
             {
-                Thread.Sleep(650);
+                Thread.Sleep(250);
 
                 
 
-                if (ammo == 90 || 60 || 30 ) //Magazin = 30 Bullets
+                if (ammo == 200 || 150 || 100 || 50 ) //Magazin = 50 Bullets //effizienteren weg finden verdammt
                 {
                     Console.WriteLine("Reloading..."); //Durch Console.Log ersetzen!!
-                    Thread.Sleep(4500);
+                    Thread.Sleep(3500);
 
                 }
 
