@@ -19,7 +19,7 @@ namespace Enemy_logic
             // AN KHALIL: Kommentare "//" LÖSCHEN
             // Variabeln anpassen!!!
 
-            // Die() === Die-check - Checkt ob der Enemy bereit zum sterben ist
+            // Die() === Die-check -> Checkt ob der Enemy bereit zum sterben ist
 
 
             bool ts = false; // Fuer Unittest - NICHT ANFASSEN!!!
@@ -35,14 +35,14 @@ namespace Enemy_logic
 
                 if (hp == 0)
                 {
-                    //Die();
-                    // Debug.Log("Enemy DEAD");
+                    Die();
+                    Debug.Log("Enemy DEAD");
                     Console.WriteLine("Enemy Dead"); //Entfernen
 
                 }
 
             }
-            /*
+            
             private void OnCollisionEnter2D(Collision2D collision)
             {
 
@@ -52,7 +52,7 @@ namespace Enemy_logic
 
 
 
-            } }*/
+            } }
 
             // Schauen ob es funktioniert
             Console.ReadKey();

@@ -134,7 +134,7 @@ Das Projekt befindet sich auf das Github von Luka Vucer, wo beide Teammitglieder
 
 | 21.05.2026    | Game - Testing                            | K.H           | Fehler finden        |
 
-| 28.05.2026    | Datenbank verknüpfen                      | L.V           | Bis 28.5: BG und TiSc| //Notiz: Schon Verknüft jedoch provisorisch. Änderungen möglich.
+| 28.05.2026    | Datenbank verknüpfen                      | L.V           | Bis 28.5: BG und TiSc|
 
 | 28.05.2026    | Game - Polishing                          | K.H           |                      |
 
