@@ -17,6 +17,7 @@
 
 - Moving Platform
 - Teleporter
+- Powerup (Minecraft Sugar)
 
 --- --- --- --- --- --- --- 
 
