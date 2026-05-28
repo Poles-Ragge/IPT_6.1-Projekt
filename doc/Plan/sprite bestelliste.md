@@ -17,3 +17,9 @@
 
 - Moving Platform
 - Teleporter
+
+--- --- --- --- --- --- --- 
+
+*Animationen*
+
+- Enemies Smile/nicht Smile
