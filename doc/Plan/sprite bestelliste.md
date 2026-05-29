@@ -9,14 +9,14 @@
 - Background Wald
 - Background Wolken
 - Background Sonne
-- Boden (tiefer)
+- Boden (tiefer) ==> 3/9 gemacht
 
 --- --- --- --- --- --- ---
 
 *Normale Obj.*
 
 - Moving Platform
-- Teleporter
+- *Teleporter* ==> FERTIG
 - Powerup (Minecraft Sugar)
 
 --- --- --- --- --- --- --- 
