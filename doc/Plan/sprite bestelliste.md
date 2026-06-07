@@ -9,13 +9,13 @@
 - Background Wald
 - Background Wolken
 - Background Sonne
-- Boden (tiefer) ==> 3/9 gemacht
+- *Boden (tiefer)* ==> FERTIG 
 
 --- --- --- --- --- --- ---
 
 *Normale Obj.*
 
-- Moving Platform
+- *Moving Platform* ==> CANCELLED
 - *Teleporter* ==> FERTIG
 - Powerup (Minecraft Sugar)
 
@@ -23,4 +23,4 @@
 
 *Animationen*
 
-- Enemies Smile/nicht Smile
+- Enemies Smile/nicht Smile == PRIO: LETZTE
