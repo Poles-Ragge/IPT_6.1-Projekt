@@ -1,7 +1,7 @@
 using UnityEngine;
 using Mono.Data.Sqlite;
 
-public class DatabaseCreator : MonoBehaviour
+public class CreateDatabase : MonoBehaviour
 {
     void Awake()
     {
