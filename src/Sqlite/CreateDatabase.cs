@@ -35,6 +35,11 @@ public class CreateDatabase : MonoBehaviour
 
     public void AddEffect(string effectName, string effectDescription)
     {
+        if (effectName == "")
+        {
+            Debug.LogWarning("Effect Name darf nicht leer sein");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -47,6 +52,16 @@ public class CreateDatabase : MonoBehaviour
 
     public void AddArmour(string armourName, string armourDescription, string armourRarity, decimal armourPrice)
     {
+        if (armourName == "")
+        {
+            Debug.LogWarning("Armour Name darf nicht leer sein");
+            return;
+        }
+        if (armourPrice < 0)
+        {
+            Debug.LogWarning("Preis darf nicht negativ sein");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -59,6 +74,16 @@ public class CreateDatabase : MonoBehaviour
 
     public void AddCharakter(string charakterName, int userId, int experience, decimal money, int level)
     {
+        if (charakterName == "")
+        {
+            Debug.LogWarning("Charakter Name darf nicht leer sein");
+            return;
+        }
+        if (level < 1 || experience < 0 || money < 0)
+        {
+            Debug.LogWarning("Ungültige Charakter Werte");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -71,6 +96,16 @@ public class CreateDatabase : MonoBehaviour
 
     public void AddItem(string itemName, string itemDescription, string itemRarity, decimal itemPrice)
     {
+        if (itemName == "")
+        {
+            Debug.LogWarning("Item Name darf nicht leer sein");
+            return;
+        }
+        if (itemPrice < 0)
+        {
+            Debug.LogWarning("Preis darf nicht negativ sein");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -155,6 +190,11 @@ public class CreateDatabase : MonoBehaviour
 
     public void DisplayItemsByRarity(string rarity)
     {
+        if (rarity == "")
+        {
+            Debug.LogWarning("Rarity darf nicht leer sein");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -173,6 +213,11 @@ public class CreateDatabase : MonoBehaviour
 
     public void DisplayArmoursByRarity(string rarity)
     {
+        if (rarity == "")
+        {
+            Debug.LogWarning("Rarity darf nicht leer sein");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -191,6 +236,16 @@ public class CreateDatabase : MonoBehaviour
 
     public void UpdateCharakter(int chaId, int experience, decimal money, int level)
     {
+        if (chaId <= 0)
+        {
+            Debug.LogWarning("Ungültige ChaId");
+            return;
+        }
+        if (experience < 0 || money < 0 || level < 1)
+        {
+            Debug.LogWarning("Ungültige Charakter Werte");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -203,6 +258,16 @@ public class CreateDatabase : MonoBehaviour
 
     public void UpdateItem(int itemId, string description, string rarity, decimal price)
     {
+        if (itemId <= 0)
+        {
+            Debug.LogWarning("Ungültige ItemId");
+            return;
+        }
+        if (price < 0)
+        {
+            Debug.LogWarning("Preis darf nicht negativ sein");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -215,6 +280,16 @@ public class CreateDatabase : MonoBehaviour
 
     public void UpdateArmour(int armourId, string description, string rarity, decimal price)
     {
+        if (armourId <= 0)
+        {
+            Debug.LogWarning("Ungültige ArmourId");
+            return;
+        }
+        if (price < 0)
+        {
+            Debug.LogWarning("Preis darf nicht negativ sein");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -227,6 +302,11 @@ public class CreateDatabase : MonoBehaviour
 
     public void DeleteItem(int itemId)
     {
+        if (itemId <= 0)
+        {
+            Debug.LogWarning("Ungültige ItemId");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -239,6 +319,11 @@ public class CreateDatabase : MonoBehaviour
 
     public void DeleteArmour(int armourId)
     {
+        if (armourId <= 0)
+        {
+            Debug.LogWarning("Ungültige ArmourId");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -251,6 +336,11 @@ public class CreateDatabase : MonoBehaviour
 
     public void DeleteEffect(int effId)
     {
+        if (effId <= 0)
+        {
+            Debug.LogWarning("Ungültige EFFId");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
@@ -263,6 +353,11 @@ public class CreateDatabase : MonoBehaviour
 
     public void DeleteCharakter(int chaId)
     {
+        if (chaId <= 0)
+        {
+            Debug.LogWarning("Ungültige ChaId");
+            return;
+        }
         using (var connection = DatabaseConnection.Instance.GetConnection())
         {
             using (var command = connection.CreateCommand())
