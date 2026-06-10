@@ -3,7 +3,7 @@ using Mono.Data.Sqlite;
 
 public class DatabaseCreator : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         CreateDB();
     }
