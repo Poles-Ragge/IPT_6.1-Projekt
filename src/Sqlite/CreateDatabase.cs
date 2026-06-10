@@ -152,4 +152,124 @@ public class DatabaseCreator : MonoBehaviour
             }
         }
     }
+
+    public void DisplayItemsByRarity(string rarity)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Item WHERE rarity = '" + rarity + "';";
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Debug.Log("Name: " + reader["name"] + "\tRarity: " + reader["rarity"] + "\tPrice: " + reader["price"]);
+                    }
+                }
+            }
+        }
+    }
+
+    public void DisplayArmoursByRarity(string rarity)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Armour WHERE rarity = '" + rarity + "';";
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Debug.Log("Name: " + reader["name"] + "\tRarity: " + reader["rarity"] + "\tPrice: " + reader["price"]);
+                    }
+                }
+            }
+        }
+    }
+
+    public void UpdateCharakter(int chaId, int experience, decimal money, int level)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "UPDATE Charakter SET experience = " + experience + ", money = " + money + ", level = " + level + " WHERE ChaId = " + chaId + ";";
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public void UpdateItem(int itemId, string description, string rarity, decimal price)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "UPDATE Item SET description = '" + description + "', rarity = '" + rarity + "', price = " + price + " WHERE ItemId = " + itemId + ";";
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public void UpdateArmour(int armourId, string description, string rarity, decimal price)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "UPDATE Armour SET description = '" + description + "', rarity = '" + rarity + "', price = " + price + " WHERE ArmourId = " + armourId + ";";
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public void DeleteItem(int itemId)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM Item WHERE ItemId = " + itemId + ";";
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public void DeleteArmour(int armourId)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM Armour WHERE ArmourId = " + armourId + ";";
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public void DeleteEffect(int effId)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM Effects WHERE EFFId = " + effId + ";";
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public void DeleteCharakter(int chaId)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM Charakter WHERE ChaId = " + chaId + ";";
+                command.ExecuteNonQuery();
+            }
+        }
+    }
 }
