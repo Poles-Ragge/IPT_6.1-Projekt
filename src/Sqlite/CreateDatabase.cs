@@ -46,6 +46,7 @@ public class CreateDatabase : MonoBehaviour
             {
                 command.CommandText = "INSERT OR IGNORE INTO Effects (name, description) VALUES ('" + effectName + "', '" + effectDescription + "');";
                 command.ExecuteNonQuery();
+
             }
         }
     }
