@@ -18,3 +18,11 @@ Das Spiel wurde mithilfe von Unity entwickelt. Jeder Art von Code wurde selbst e
 Die jeweiligen Grafiken wurden alle selbst erschaffen <br>
 
 Weil das Projekt beides sowohl C# als auch SQL beinhalten soll, haben wir uns entschieden ein Videospiel zu erschaffen das mithilfe von einer SQLight Datenbank Daten persistent speichert. Wir wissen das dies ineffizienter ist ein z.b eine JSON Speicherung, jedoch wird dies ein Proof-of-Concept sein, damit wir sehen wollen wie das funktionieren könnte. Wir haben uns für ein Spiel entschieden weil wir schon Erfahrung damit gemacht haben in einem früheren IPT Modul. Wir benutzen dabei UNITY, was ein Teammitglied (LV) den anderen (KH) beibringen will.
+
+***TODO***
+
+- Screenshots von dev
+
+- Planung
+
+- Orientierung

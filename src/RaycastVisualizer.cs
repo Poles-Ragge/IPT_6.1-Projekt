@@ -31,18 +31,6 @@ public class EnemyDetection : MonoBehaviour
                 playerVisible = false;
                 Debug.Log("Player blocked by obstacle.");
             }
-            else if (hit.collider.CompareTag("shield"))
-            {
-                playerVisible = false
-                Debug.Log("player blocked by shield")
-                    while (int i = 0, i =< 100, i++ ){
-                    Debug.Log("Player blocked by shield")
-                        if hit.collider.CompareTag("player"){
-                        int i++;
-                    };
-                }
-                Debug.Log("player blocked by shield")
-            }
             else
             {
                 playerVisible = false;
