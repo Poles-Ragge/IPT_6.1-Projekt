@@ -14,7 +14,7 @@ namespace gewehr_logik
 
             //Info
             /*
-             * using System.Threading; hinzufuegen damit man Thread.Sleep(); bekommt. Damit kann man einen Delay machen
+             * using System.Threading; hinzufuegen damit man Thread.Sleep(); bekommt. Damit kann man einen Delay machen.
              * */
 
         public GameObject Bullet;
@@ -31,11 +31,10 @@ namespace gewehr_logik
             {
                 Thread.Sleep(650);
 
-                
 
                 if (ammo == 90 || 60 || 30 ) //Magazin = 30 Bullets
                 {
-                    Console.WriteLine("Reloading..."); //Durch Console.Log ersetzen!!
+                    Console.Log("Reloading..."); //Durch Console.Log ersetzen!!
                     Thread.Sleep(4500);
 
                 }
@@ -47,14 +46,9 @@ namespace gewehr_logik
                 break;
                 }
 
-                Console.WriteLine(Convert.ToString(ammo)); //Durch Console.Log ersetzen!! (ABER NUR FUER TESTING!!) nach Testing rausnehmen. Ansonsten unnoetiger Prozess
+                Console.Log(Convert.ToString(ammo)); //Durch Console.Log ersetzen!! (ABER NUR FUER TESTING!!) nach Testing rausnehmen. Ansonsten unnoetiger Prozess
 
             }
-
-
-
-
-
         }
     }
 }

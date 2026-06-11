@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Threading
 
 namespace Enemy_logic
 {
@@ -55,10 +56,10 @@ namespace Enemy_logic
             } }
 
             // Schauen ob es funktioniert
-            Console.ReadKey();
-            damage();
-            Console.ReadKey();
-            damage();
+            // Console.ReadKey();
+            // damage();
+            // Console.ReadKey();
+            // damage();
 
             Private void Die()
             {

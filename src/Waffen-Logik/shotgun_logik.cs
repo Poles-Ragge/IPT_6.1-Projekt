@@ -14,6 +14,7 @@ namespace shotgun_logik
 
             //Info
             /*
+             * Console.Log duerfte mal entfernt werden wenn game zu buggy.
              * using System.Threading; hinzufuegen damit man Thread.Sleep(); bekommt. Damit kann man einen Delay machen
              * */
 
@@ -33,7 +34,7 @@ namespace shotgun_logik
 
                 if (ammo == 100 || 80 || 60 || 40 || 20)
                 {
-                    Console.WriteLine("Reloading..."); //Durch Console.Log ersetzen!!
+                    Console.Log("Reloading..."); //Durch Console.Log ersetzen!!
                     Thread.Sleep(4500);
                 }
 
@@ -44,14 +45,9 @@ namespace shotgun_logik
                 }
 
 
-                Console.WriteLine(Convert.ToString(ammo)); //Durch Console.Log ersetzen!! (ABER NUR FUER TESTING!!) nach Testing rausnehmen. Ansonsten unnoetiger Prozess
+                Console.Log(Convert.ToString(ammo)); //Durch Console.Log ersetzen!! (ABER NUR FUER TESTING!!) nach Testing rausnehmen. Ansonsten unnoetiger Prozess
 
             }
-
-
-
-
-
         }
     }
 }
