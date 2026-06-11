@@ -1,0 +1,26 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Floor.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        }
+    },
+    "last.imagePath": "C:/Users/poles/Desktop/IPT6.1-Projekt/doc/Grafiken/Tilemaps/Raster",
+    "map.fixedSize": false,
+    "openFiles": [
+        "Floor.tsx"
+    ],
+    "project": "IPT6.1-lvl-1.tiled-project",
+    "recentFiles": [
+        "Floor.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.useTransparentColor": true
+}
