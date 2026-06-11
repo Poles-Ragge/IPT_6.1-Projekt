@@ -23,33 +23,33 @@ Weil das Projekt beides sowohl C# als auch SQL beinhalten soll, haben wir uns en
 
 <h3>*ORIENTIERUNGSHILFE*</h3>
 
-- src
-=> Ordner:  Bullets = Skripts für Bullets
-=> Ordner:  Sqlite = Datenbank Skripte
-=> Ordner:  Waffen-Logik = Skripte der einzelnen Waffen
+* src
+=> Ordner:  Bullets = Skripts für Bullets<br>
+=> Ordner:  Sqlite = Datenbank Skripte<br>
+=> Ordner:  Waffen-Logik = Skripte der einzelnen Waffen<br><br>
 
-=> File:    coin.cs = skript für Münzen
-=> File:    Enemy2.cs = skript für Gegner
-=> File:    EnemyLogic.cs = skript für Gegner
-=> File:    GoToMap.cs = skript für Teleportation
-=> File:    medikit.cs = skript für Leben regenerieren
-=> File:    Player.cs = skript für Spieler
-=> File:    RaycastVisualizer.cs = skript für Gegnersicht/Spieler sichtbarkeit
-=> File:    Win.cs = skript für Siegbedingungen
-<br>
-- doc
-=> Ordner:  Doku Bilder = Ordner mit Bilder zur Dokumentation
-==> Ordner: Animationen = Ordner mit Animationsordnern
-==> Ordner: Characters = Ordner mit Charaktergrafiken
-==> Ordner: Guns = Waffengrafiken & Bulletgrafik
-==> Ordner: misc. = Allerlei Grafiken (misc.)
-==> Ordner: Raster = Alle Grafikraster
-==> Ordner: Tilemaps = Alle Tiles, Tilemaps, .Json dateien, etc. 
+=> File:    coin.cs = skript für Münzen<br>
+=> File:    Enemy2.cs = skript für Gegner<br>
+=> File:    EnemyLogic.cs = skript für Gegner<br>
+=> File:    GoToMap.cs = skript für Teleportation<br>
+=> File:    medikit.cs = skript für Leben regenerieren<br>
+=> File:    Player.cs = skript für Spieler<br>
+=> File:    RaycastVisualizer.cs = skript für Gegnersicht/Spieler sichtbarkeit<br>
+=> File:    Win.cs = skript für Siegbedingungen<br><br>
 
-=> Ordner:  ER Diagramme = Ordner mit allen ER Diagrammen
-=> Ordner:  Grafiken = Ordner mit allen Grafiken/Bilder/Tilemaps/etc.
-=> Ordner:  Konzepte = Planungsordner mit Konzeptbildern
-=> Ordner:  Plan = Planungsordner mit allen Plänen, Notizen, etc.
+* doc<br>
+=> Ordner:  Doku Bilder = Ordner mit Bilder zur Dokumentation<br>
+==> Ordner: Animationen = Ordner mit Animationsordnern<br>
+==> Ordner: Characters = Ordner mit Charaktergrafiken<br>
+==> Ordner: Guns = Waffengrafiken & Bulletgrafik<br>
+==> Ordner: misc. = Allerlei Grafiken (misc.)<br>
+==> Ordner: Raster = Alle Grafikraster<br>
+==> Ordner: Tilemaps = Alle Tiles, Tilemaps, .Json dateien, etc.<br><br>
+
+=> Ordner:  ER Diagramme = Ordner mit allen ER Diagrammen<br>
+=> Ordner:  Grafiken = Ordner mit allen Grafiken/Bilder/Tilemaps/etc.<br>
+=> Ordner:  Konzepte = Planungsordner mit Konzeptbildern<br>
+=> Ordner:  Plan = Planungsordner mit allen Plänen, Notizen, etc.<br>
 <br>
 
 - Screenshots von dev
