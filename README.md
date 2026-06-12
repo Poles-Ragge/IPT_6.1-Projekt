@@ -19,11 +19,10 @@ Die jeweiligen Grafiken wurden alle selbst erschaffen <br>
 
 Weil das Projekt beides sowohl C# als auch SQL beinhalten soll, haben wir uns entschieden ein Videospiel zu erschaffen das mithilfe von einer SQLight Datenbank Daten persistent speichert. Wir wissen das dies ineffizienter ist ein z.b eine JSON Speicherung, jedoch wird dies ein Proof-of-Concept sein, damit wir sehen wollen wie das funktionieren könnte. Wir haben uns für ein Spiel entschieden weil wir schon Erfahrung damit gemacht haben in einem früheren IPT Modul. Wir benutzen dabei UNITY, was ein Teammitglied (LV) den anderen (KH) beibringen will.
 
-***TODO***
 
 <h3>*ORIENTIERUNGSHILFE*</h3>
 
-* src
+*src*<br>
 => Ordner:  Bullets = Skripts für Bullets<br>
 => Ordner:  Sqlite = Datenbank Skripte<br>
 => Ordner:  Waffen-Logik = Skripte der einzelnen Waffen<br><br>
@@ -37,7 +36,7 @@ Weil das Projekt beides sowohl C# als auch SQL beinhalten soll, haben wir uns en
 => File:    RaycastVisualizer.cs = skript für Gegnersicht/Spieler sichtbarkeit<br>
 => File:    Win.cs = skript für Siegbedingungen<br><br>
 
-* doc<br>
+*doc*<br>
 => Ordner:  Doku Bilder = Ordner mit Bilder zur Dokumentation<br>
 ==> Ordner: Animationen = Ordner mit Animationsordnern<br>
 ==> Ordner: Characters = Ordner mit Charaktergrafiken<br>
@@ -51,9 +50,3 @@ Weil das Projekt beides sowohl C# als auch SQL beinhalten soll, haben wir uns en
 => Ordner:  Konzepte = Planungsordner mit Konzeptbildern<br>
 => Ordner:  Plan = Planungsordner mit allen Plänen, Notizen, etc.<br>
 <br>
-
-- Screenshots von dev
-
-- Planung
-
-- Orientierung
