@@ -1,13 +1,13 @@
 using UnityEngine;
 public class Win : MonoBehaviour
 {
-    public GameObject winUI;
+    public GameObject shopUI;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("You win!");
-            winUI.SetActive(true);
+            Debug.Log("Shop geöffnet!");
+            shopUI.SetActive(true);
             Time.timeScale = 0f;
         }
     }
