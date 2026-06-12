@@ -4,16 +4,36 @@ using UnityEngine.SceneManagement;
 
 public class LoginUI : MonoBehaviour
 {
-    public TMP_InputField usernameField;
-    public TMP_InputField passwordField;
-    public TextMeshProUGUI messageText;
+    public GameObject loginPanel;
+    public GameObject registerPanel;
+
+    public TMP_InputField loginUsernameField;
+    public TMP_InputField loginPasswordField;
+    public TextMeshProUGUI loginMessageText;
+
+    public TMP_InputField registerUsernameField;
+    public TMP_InputField registerPasswordField;
+    public TMP_InputField registerPasswordConfirmField;
+    public TextMeshProUGUI registerMessageText;
 
     private UserRepository userRepo = new UserRepository();
 
+    void Start()
+    {
+        loginPanel.SetActive(true);
+        registerPanel.SetActive(false);
+    }
+
     public void OnLoginClick()
     {
-        string username = usernameField.text;
-        string password = passwordField.text;
+        string username = loginUsernameField.text;
+        string password = loginPasswordField.text;
+
+        if (username == "" || password == "")
+        {
+            loginMessageText.text = "Bitte alle Felder ausfüllen";
+            return;
+        }
 
         int userId = userRepo.Login(username, password);
 
@@ -25,24 +45,58 @@ public class LoginUI : MonoBehaviour
         }
         else
         {
-            messageText.text = "Falscher Username oder Passwort";
+            loginMessageText.text = "Falscher Username oder Passwort";
         }
     }
 
     public void OnRegisterClick()
     {
-        string username = usernameField.text;
-        string password = passwordField.text;
+        string username = registerUsernameField.text;
+        string password = registerPasswordField.text;
+        string passwordConfirm = registerPasswordConfirmField.text;
 
-        bool success = userRepo.Registrieren(username, password);
+        if (username == "" || password == "" || passwordConfirm == "")
+        {
+            registerMessageText.text = "Bitte alle Felder ausfüllen";
+            return;
+        }
+        if (username.Length < 3)
+        {
+            registerMessageText.text = "Username muss mindestens 3 Zeichen haben";
+            return;
+        }
+        if (password.Length < 8)
+        {
+            registerMessageText.text = "Passwort muss mindestens 8 Zeichen haben";
+            return;
+        }
+        if (password != passwordConfirm)
+        {
+            registerMessageText.text = "Passwörter stimmen nicht überein";
+            return;
+        }
+
+        bool success = userRepo.Register(username, password);
 
         if (success)
         {
-            messageText.text = "Registrierung erfolgreich";
+            registerMessageText.text = "Registrierung erfolgreich";
         }
         else
         {
-            messageText.text = "Registrierung fehlgeschlagen";
+            registerMessageText.text = "Username bereits vergeben";
         }
+    }
+
+    public void ShowRegister()
+    {
+        loginPanel.SetActive(false);
+        registerPanel.SetActive(true);
+    }
+
+    public void ShowLogin()
+    {
+        registerPanel.SetActive(false);
+        loginPanel.SetActive(true);
     }
 }
