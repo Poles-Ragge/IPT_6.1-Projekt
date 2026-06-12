@@ -7,7 +7,7 @@ public class Medikit : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerMovement player = collision.GetComponent<PlayerMovement>();
-            player.health += 20;
+            player.Heal(20);
             player.PlayMedikitSound();
             Destroy(gameObject);
         }
