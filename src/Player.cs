@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump);
             PlaySound(jumpClip);
