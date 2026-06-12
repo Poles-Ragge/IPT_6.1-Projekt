@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DatabaseUpdater : MonoBehaviour
 {
-    private int aktuelleVersion = 1;
+    private int aktuelleVersion = 2;
 
     void Start()
     {
@@ -53,6 +53,16 @@ public class DatabaseUpdater : MonoBehaviour
                 if (vonVersion < 1)
                 {
                     Debug.Log("Update auf Version 1 wird angewendet");
+                }
+
+                if (vonVersion < 2)
+                {
+                    Debug.Log("Update auf Version 2 wird angewendet");
+                    command.CommandText = "ALTER TABLE Charakter ADD COLUMN has_gewehr INTEGER DEFAULT 0";
+                    command.ExecuteNonQuery();
+
+                    command.CommandText = "ALTER TABLE Charakter ADD COLUMN speed DECIMAL(4,2) DEFAULT 5";
+                    command.ExecuteNonQuery();
                 }
 
                 command.CommandText = "UPDATE DbVersion SET version = " + aktuelleVersion + ";";
