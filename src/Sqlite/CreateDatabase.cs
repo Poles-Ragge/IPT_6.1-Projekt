@@ -46,7 +46,6 @@ public class CreateDatabase : MonoBehaviour
             {
                 command.CommandText = "INSERT OR IGNORE INTO Effects (name, description) VALUES ('" + effectName + "', '" + effectDescription + "');";
                 command.ExecuteNonQuery();
-
             }
         }
     }
@@ -365,6 +364,46 @@ public class CreateDatabase : MonoBehaviour
             {
                 command.CommandText = "DELETE FROM Charakter WHERE ChaId = " + chaId + ";";
                 command.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public int GetItemCount()
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT COUNT(*) FROM Item;";
+                return System.Convert.ToInt32(command.ExecuteScalar());
+            }
+        }
+    }
+
+    public int GetItemId(string name)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT ItemId FROM Item WHERE name = '" + name + "';";
+                var result = command.ExecuteScalar();
+                if (result != null)
+                    return System.Convert.ToInt32(result);
+            }
+        }
+        return -1;
+    }
+
+    public string GetItemRarity(int itemId)
+    {
+        using (var connection = DatabaseConnection.Instance.GetConnection())
+        {
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT rarity FROM Item WHERE ItemId = " + itemId + ";";
+                var result = command.ExecuteScalar();
+                return result != null ? result.ToString() : "";
             }
         }
     }
