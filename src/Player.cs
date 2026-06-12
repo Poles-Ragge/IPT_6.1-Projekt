@@ -152,4 +152,11 @@ public class PlayerMovement : MonoBehaviour
     {
         PlaySound(medikitClip);
     }
+
+    public void Heal(int amount)
+    {
+        health += amount;
+        if (health > 100)
+            health = 100;
+    }
 }
