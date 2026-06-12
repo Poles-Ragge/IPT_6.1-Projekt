@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioClip coinClip;
 
-
+    public AudioClip medikitClip;
 
 
     private bool isGrounded;
@@ -90,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        Debug.Log("isGrounded: " + isGrounded);
 
     }
 
@@ -154,6 +155,16 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+
+    public void PlayCoinSound()
+    {
+        PlaySound(coinClip);
+    }
+
+    public void PlayMedikitSound()
+    {
+        PlaySound(medikitClip);
+    }
 
 }
 
